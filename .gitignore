@@ -1,0 +1,11 @@
+lakehouse.duckdb
+lakehouse.duckdb.wal
+target/
+dbt_packages/
+logs/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store

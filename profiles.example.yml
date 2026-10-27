@@ -1,0 +1,13 @@
+# Production profile example: BigQuery.
+# Copy to ~/.dbt/profiles.yml and fill in your project, then run:
+#   dbt build --target prod
+# Also set the source schema in models/sources.yml to your bronze dataset.
+lakehouse:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: oauth
+      project: your-gcp-project
+      dataset: lakehouse_gold
+      threads: 4

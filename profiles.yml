@@ -1,0 +1,9 @@
+# Local profile: DuckDB, no credentials needed.
+# Used by: dbt build --profiles-dir .
+lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: lakehouse.duckdb
+      schema: analytics
