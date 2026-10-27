@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: Cleaned orders, one row per order.
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed', 'cancelled', 'refunded']
+  - name: stg_customers
+    description: Cleaned customers, one row per customer.
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_products
+    description: Cleaned products, one row per product.
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
