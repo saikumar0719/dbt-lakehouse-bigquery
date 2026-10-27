@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: retail
+    description: Raw retail tables, loaded untouched into the bronze schema.
+    schema: bronze
+    tables:
+      - name: orders
+        description: One row per order line as received from the store.
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+      - name: customers
+        description: Customer master as received.
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+      - name: products
+        description: Product catalog as received.
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
