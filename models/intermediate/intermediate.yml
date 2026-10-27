@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: Orders joined to customer and product attributes, still at order grain.
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
